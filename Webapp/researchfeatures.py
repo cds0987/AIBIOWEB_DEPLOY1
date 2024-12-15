@@ -29,11 +29,21 @@ def predict():
     selected_model = request.form['use_model']
     try:
         if selected_model == '1':
-            results = freeprediction.predict_m1(smiles)
+            bbbp,bace,ctox,fda,esol,freesolv,lipophilicity,qm7 = freeprediction.predict_m1(smiles)
         elif selected_model == '2':
-            results = freeprediction.predict_m2(smiles)
+            bbbp,bace,ctox,fda,esol,freesolv,lipophilicity,qm7 = freeprediction.predict_m2(smiles)
         else:
             raise ValueError("Invalid model selection")
+        results={
+        'bbbp':'Yes' if bbbp>=0.5 else 'No',
+        'bace':'Yes' if bace>=0.5 else 'No',
+        'ctox':'Yes' if ctox>=0.5 else 'No',
+        'fda':'Yes' if fda>=0.5 else 'No',
+        'esol':esol,
+        'freesolv':freesolv,
+        'lipophilicity':lipophilicity,
+        'qm7':qm7
+    }
         return render_template('ResearchFeatures/predict.html', prediction=results)
     except Exception as e:
         return render_template('ResearchFeatures/predict.html', error=str(e))
@@ -198,11 +208,11 @@ def advancedproccess():
                 'smiles': smile
             })
     results={
-        'bbbp':bbbp,
-        'bace':bace,
-        'ctox':ctox,
-        'fda':fda,
-        'hiv':hiv,
+        'bbbp':'Yes' if bbbp>=0.5 else 'No',
+        'bace':'Yes' if bace>=0.5 else 'No',
+        'ctox':'Yes' if ctox>=0.5 else 'No',
+        'fda':'Yes' if fda>=0.5 else 'No',
+        'hiv':'Yes' if hiv>=0.5 else 'No',
         'esol':esol,
         'freesolv':freesolv,
         'lipophilicity':lipophilicity,
