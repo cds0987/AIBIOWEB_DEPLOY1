@@ -20,7 +20,10 @@ def register():
         try:
             db_manager.add_user(user_id, full_name, email, password, level=1)
             session["user_id"] = user_id
-            return redirect(url_for("auth.login"))
+            session["full_name"] = full_name
+            session["email"] = email
+            session["level"] = 1
+            return redirect(url_for("mainpage.usermainpage"))
         except Exception as e:
             return render_template("Authentication/register.html", status="error", message=str(e))
     return render_template("Authentication/register.html")

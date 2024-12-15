@@ -23,10 +23,10 @@
         <!-- Disable form if user has exceeded usage limit -->
         {% if not error or 'exceeded' not in error.lower() %}
         <section class="form-section">
-            <h2>Enter a SMILE String</h2>
+            <h2>Enter a Molecule formula</h2>
             <form action="/features/demoprocess" method="post">
                 <div class="input-group">
-                    <input type="text" name="smiles" placeholder="Enter a SMILES string" required />
+                    <input type="text" name="smiles" placeholder="Formula" required />
                 </div>
                 <div class="input-group">
                     <label for="use_model">Select Model:</label>
@@ -48,8 +48,7 @@
         <!-- Results Section -->
         {% if prediction %}
         <section class="results-section">
-            <h2>Predicted Results</h2>
-            <p>Here are the predicted properties based on the SMILES string you submitted:</p>
+            <h2>Molecule investigation</h2>
 
             <!-- Display molecular image -->
             <h3>Molecular Visualization:</h3>
@@ -58,7 +57,7 @@
             </div>
 
             <!-- Display predictions -->
-            <h3>Predictions:</h3>
+            <h3>Molecule Properties:</h3>
             <ul class="prediction-list">
                 <li><strong>BBBP (Brain Barrier):</strong> {{ prediction['bbbp'] }}</li>
                 <li><strong>BACE (Alzheimer's Risk):</strong> {{ prediction['bace'] }}</li>
