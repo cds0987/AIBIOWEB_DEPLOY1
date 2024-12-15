@@ -19,10 +19,10 @@
 
         <!-- Form to submit SMILES -->
         <section class="form-section">
-            <h2>Enter a SMILES String</h2>
+            <h2>Enter a Molecule Formula</h2>
             <form action="/features/advanced" method="post">
                 <div class="input-group">
-                    <input type="text" name="smiles" placeholder="Enter a SMILES string" required />
+                    <input type="text" name="smiles" placeholder="Enter a Your Molecule" required />
                 </div>
                 <button type="submit" class="btn-submit">Submit</button>
             </form>
@@ -41,8 +41,7 @@
         {% if results %}
         <!-- Prediction Results Section -->
         <section class="prediction-results">
-            <h2>Predicted Results</h2>
-            <p>Here are the predicted properties based on the SMILES string you submitted:</p>
+            <h2>Molecule properties predictions</h2>
             <!-- Display predictions as a table -->
             <h3>Predictions:</h3>
             <table class="prediction-table">
@@ -121,14 +120,14 @@
         {% if smiles %}
         <!-- Display the result -->
         <section class="result-section">
-            <h2>Desciption of your Smiles:</h2>
-            <p><strong>SMILES:</strong> {{ smiles }}</p>
-            <p><strong>The structure of your Smiles:</strong> {{ description }}</p>
+            <h2>Desciption:</h2>
+            <p><strong>Molecule Formula:</strong> {{ smiles }}</p>
+            <p><strong>The structure of Molecule {smiles} is :</strong> {{ description }}</p>
         </section>
         {% endif %}
         {% if similarities %}
         <div class="similarity-results">
-            <h2>Similarity Smiles:</h2>
+            <h2>Similarity Molecules :</h2>
             <div class="scrollable-results">
                 <table>
                     <thead>

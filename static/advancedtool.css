@@ -1,201 +1,226 @@
-/* General Body Styles */
+/* General body styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
-    background: url('/static/Images/advancedtool.png') no-repeat center center / cover;
+    background: url('/static/images/advancedtool.png') no-repeat center center / cover;
     background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Container */
+/* Main container to structure the layout */
 .container {
     padding: 20px;
-    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    /* Transparent dark overlay for readability */
+    border-radius: 10px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
 }
 
-/* Header Section */
+/* Header section styling */
 header {
+    text-align: center;
     margin-bottom: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 36px;
+    color: #fff;
     margin: 0;
-    color: #00ffff;
-    /* Neon Cyan */
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
 header p {
-    font-size: 1.2em;
-    color: #ff69b4;
-    /* Neon Pink */
-    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+    font-size: 18px;
+    color: #ddd;
 }
 
-/* Form Section */
+/* Styling for form input */
 .form-section {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    max-width: 600px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
-.form-section input {
-    width: 80%;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.btn-submit {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    background-color: #00ff7f;
-    /* Neon Green */
+.form-section h2 {
+    font-size: 28px;
     color: #fff;
+    text-align: center;
+}
+
+.form-section .input-group input {
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slight transparency */
+    color: #333;
+}
+
+/* Smaller Submit Button */
+.form-section .btn-submit {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Vibrant green */
+    color: white;
+    font-size: 16px;
+    /* Smaller font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f;
+    margin: 20px auto;
+    width: auto;
+    /* Adjust width to fit the content */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
 }
 
-.btn-submit:hover {
-    background-color: #32cd32;
-    /* Darker Neon Green */
+.form-section .btn-submit:hover {
+    background-color: #45a049;
+    /* Slightly darker green on hover */
+    transform: translateY(-3px);
+    /* Lift the button slightly on hover */
 }
 
-/* Image Section */
+.form-section .btn-submit:active {
+    background-color: #388e3c;
+    /* Darker green when clicked */
+    transform: translateY(1px);
+    /* Slight indentation when pressed */
+}
+
+
+
+/* Image Visualization Section */
+.image-visualization {
+    margin-top: 40px;
+    text-align: center;
+}
+
 .image-visualization img {
     max-width: 100%;
     height: auto;
-    border: 2px solid #fff;
     border-radius: 10px;
 }
 
-/* Results Section */
-.prediction-results,
-.result-section,
-.similarity-results {
-    background-color: rgba(20, 20, 60, 0.8);
-    /* Deep Neon Blue */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+/* Prediction Results Section */
+.prediction-results {
+    margin-top: 30px;
+}
+
+.prediction-results h2 {
+    font-size: 28px;
     color: #fff;
 }
 
-.prediction-results h2,
-.result-section h2,
-.similarity-results h2 {
-    color: #32cd32;
-    /* Lime Green */
-    text-shadow: 0 0 5px #32cd32, 0 0 10px rgba(50, 205, 50, 0.5);
-    /* Subtle glow */
+.prediction-results table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
 }
 
+.prediction-results th,
+.prediction-results td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+}
 
-/* Table Styles */
-table {
+.prediction-results th {
+    background-color: #333;
+}
+
+.prediction-results td {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prediction-results tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Similarity Results Section */
+.similarity-results {
+    margin-top: 30px;
+}
+
+.similarity-results h2 {
+    font-size: 28px;
+    color: #fff;
+}
+
+.similarity-results .scrollable-results {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.similarity-results table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
 }
 
-table th,
-table td {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Semi-transparent white border */
-    padding: 10px;
+.similarity-results th,
+.similarity-results td {
+    padding: 12px;
     text-align: left;
-}
-
-table th {
-    background-color: rgba(138, 43, 226, 0.9);
-    /* Neon Purple */
+    border-bottom: 1px solid #ccc;
     color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #8a2be2;
-    /* Neon Glow */
 }
 
-table td {
-    background-color: rgba(0, 255, 255, 0.6);
-    /* Neon Cyan */
-    color: #000;
-    /* Dark text for contrast */
+.similarity-results th {
+    background-color: #333;
 }
 
-/* Scrollable Section */
-.scrollable-results {
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Subtle border */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Semi-transparent Black */
+.similarity-results td {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Navigation Buttons */
-.back-button,
-.feedback-button {
-    display: block;
-    width: 150px;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 5px;
-    background-color: #007BFF;
-    /* Neon Red */
+/* Result Section */
+.result-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.result-section h2 {
+    font-size: 28px;
     color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 0 auto;
-    box-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF;
 }
 
-.back-button:hover,
-.feedback-button:hover {
-    background-color: #007BFF;
-    /* Lighter Neon Red */
-    box-shadow: 0 0 15px #007BFF, 0 0 30px #007BFF;
+.result-section p {
+    font-size: 18px;
+    color: #ddd;
 }
 
 /* Navigation Section */
 .navigation-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    /* Space between buttons */
-    margin-top: 20px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* Two Tables Side by Side */
-.prediction-results .prediction-table,
-.similarity-results table {
-    display: inline-block;
-    width: 45%;
-    vertical-align: top;
-    margin: 0 2%;
-    background-color: rgba(72, 61, 139, 0.8);
-    /* Neon Indigo */
-    border-radius: 10px;
-    color: #fff;
-    text-shadow: 0 0 5px #fff;
+.navigation-section .back-to-main .back-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
-@media screen and (max-width: 768px) {
-
-    .prediction-results .prediction-table,
-    .similarity-results table {
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-    }
+.navigation-section .back-to-main .back-button:hover {
+    background-color: #0056b3;
 }

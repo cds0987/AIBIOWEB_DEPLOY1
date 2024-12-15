@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate SMILES</title>
+    <title>Generate New Molecules</title>
     <!-- Link to External CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='generate.css') }}">
 </head>
@@ -18,7 +18,7 @@
             <!-- Form to input SMILES -->
             <form method="POST" action="/features/generate" class="transparent-form">
                 <div class="form-group">
-                    <label for="generate">Enter description for your satisfied Molecule:</label>
+                    <label for="generate">Enter description of New Molecules:</label>
                     <input type="text" id="generate" name="generate" required>
                 </div>
                 <button type="submit" class="btn-submit">Generate</button>

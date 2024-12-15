@@ -10,60 +10,96 @@ body {
     padding: 0;
 }
 
+/* General styling for the container */
+/* General styling for the container */
 .container {
-    width: 80%;
-    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black with transparency */
+    color: #fff;
     padding: 20px;
-}
-
-h1 {
-    color: #1abc9c;
-    /* Vibrant turquoise */
+    border-radius: 10px;
+    width: 50%;
+    margin: 50px auto;
     text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    /* Neon purple glow effect */
+    backdrop-filter: blur(5px);
+    /* Adds a blur effect to the background */
 }
 
-
-.form-group {
+/* Styling for the heading */
+.container h1 {
+    font-size: 2rem;
+    color: #bb33ff;
+    /* Neon purple color */
+    text-shadow: 0 0 10px #bb33ff, 0 0 20px #bb33ff;
+    /* Neon text glow effect */
     margin-bottom: 20px;
 }
 
-.form-group label {
-    font-size: 1.2rem;
-    color: #e74c3c;
-    /* Vibrant red */
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e74c3c;
-    /* Vibrant red border */
-    border-radius: 5px;
+/* Label styling */
+label {
+    font-size: 1.1rem;
+    color: #d3d3d3;
+    /* Light grey for labels */
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
     font-size: 1rem;
-    margin-top: 5px;
-    background-color: #f9f9f9;
-    /* Light background for contrast */
-}
-
-.form-group input:focus {
-    border-color: #f39c12;
-    /* Change border color to vibrant yellow-orange on focus */
-    outline: none;
-}
-
-
-.btn-submit {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
+    border: 2px solid #bb33ff;
+    background-color: rgba(44, 44, 44, 0.8);
+    /* Transparent background with a slight dark tint */
+    color: #fff;
     border-radius: 5px;
-    border: none;
-    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+    /* Neon purple glow */
+    transition: box-shadow 0.3s ease;
 }
 
-.btn-submit:hover {
-    background-color: #2980b9;
+/* Input field focus effect */
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 1);
+    /* Strong neon glow on focus */
 }
+
+/* Button styling */
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #bb33ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    /* Neon purple glow */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+.btn-submit:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 1);
+    /* Enhanced neon glow on hover */
+}
+
+/* Button active effect */
+.btn-submit:active {
+    transform: scale(1.05);
+}
+
+
 
 /* Result Section */
 .result-section {

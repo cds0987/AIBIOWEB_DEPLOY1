@@ -1,7 +1,7 @@
 /* General Body Styles */
 body {
     font-family: Arial, sans-serif;
-    background: url('/static/Images/MoleculeImage.jpg') no-repeat center center / cover;
+    background: url('/static/Images/describer.jpg') no-repeat center center / cover;
     background-attachment: fixed;
     color: #fff;
     margin: 0;

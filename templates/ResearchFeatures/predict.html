@@ -19,10 +19,10 @@
 
         <!-- Form to submit SMILES -->
         <section class="form-section">
-            <h2>Enter a SMILE String</h2>
+            <h2>Molecule Formula</h2>
             <form action="/features/predict" method="post">
                 <div class="input-group">
-                    <input type="text" name="smiles" placeholder="Enter a SMILES string" required />
+                    <input type="text" name="smiles" placeholder="Enter a Formula" required />
                 </div>
                 <div class="input-group">
                     <label for="use_model">Select Model:</label>
@@ -39,7 +39,7 @@
         {% if prediction %}
         <section class="results-section">
             <h2>Predicted Results</h2>
-            <p>Here are the predicted properties based on the SMILES string you submitted:</p>
+            <p>Molecule Properties Prediction:</p>
             <ul class="prediction-list">
                 <li><strong>BBBP (Brain Barrier):</strong> {{ prediction['bbbp'] }}</li>
                 <li><strong>BACE (Alzheimer's Risk):</strong> {{ prediction['bace'] }}</li>
