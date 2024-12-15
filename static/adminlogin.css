@@ -4,7 +4,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('/static/images/adminlogin.jpg') no-repeat center center / cover;
+    background: url('/static/Images/adminlogin.jpg') no-repeat center center / cover;
     background-attachment: fixed;
     color: #333333;
 }

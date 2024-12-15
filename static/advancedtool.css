@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
-    background: url('/static/images/advancedtool.png') no-repeat center center / cover;
+    background: url('/static/Images/advancedtool.png') no-repeat center center / cover;
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
