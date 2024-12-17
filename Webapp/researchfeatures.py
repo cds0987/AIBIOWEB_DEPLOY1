@@ -259,7 +259,7 @@ def save_usage_data(data, filename):
     with open(filename, 'w') as file:
         json.dump(data, file)
 
-@feature_bp.route('/demoprocess', methods=['POST'])
+@feature_bp.route('/demo_process', methods=['POST'])
 def demoprocess():
     # Load the current usage data
     usage_data = load_usage_data(USAGE_TRACKING_FILE)
