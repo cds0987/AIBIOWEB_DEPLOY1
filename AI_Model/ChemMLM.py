@@ -43,14 +43,14 @@ class CHMLM(nn.Module):
         self.qm7=feedForward(384,256,1)
 
         #load weight
-        self.bbbp.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/bbbp.pt',weights_only=False))
-        self.bace.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/bace.pt',weights_only=False))
-        self.ctox.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/ctox.pt',weights_only=False))
-        self.fda.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/fda.pt',weights_only=False))
-        self.esol.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/esol.pt',weights_only=False))
-        self.freesolv.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/freesolv.pt',weights_only=False))
-        self.lipophilicity.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/lipophilicity.pt',weights_only=False))
-        self.qm7.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/qm7.pt',weights_only=False))
+        self.bbbp.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/bbbp.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.bace.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/bace.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.ctox.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/ctox.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.fda.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/fda.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.esol.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/esol.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.freesolv.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/freesolv.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.lipophilicity.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/lipophilicity.pt',weights_only=False,map_location=torch.device('cpu')))
+        self.qm7.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/77MLM/qm7.pt',weights_only=False,map_location=torch.device('cpu')))
 
         self.to(device)
     def proccess_smile(self,smiles):
