@@ -42,7 +42,7 @@ class Smiles2Image():
     def __init__(self):
         self.tokenizer=AutoTokenizer.from_pretrained("ibm/MoLFormer-XL-both-10pct", trust_remote_code=True,model_max_length=49)
         self.model=CNNLSTMModelMobileNet(embedding_dim=300, hidden_dim=512, vocab_size=self.tokenizer.vocab_size+1)
-        self.model.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Image2Molecule/Model (best).pt',weights_only=False))
+        self.model.load_state_dict(torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Image2Molecule/Model (best).pt',weights_only=False,map_location=torch.device('cpu')))
         self.model.eval()
         self.transform = transforms.Compose([
         transforms.Resize((224, 224)),  # Resize to match your model's expected input size

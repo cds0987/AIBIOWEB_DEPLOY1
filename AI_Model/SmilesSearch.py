@@ -9,12 +9,12 @@ class search_model():
     self.tokenizer=AutoTokenizer.from_pretrained("ibm/MoLFormer-XL-both-10pct", trust_remote_code=True)
     for param in self.base_model.parameters():
         param.requires_grad = False
-    self.bbbp=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/bbbp.pt',weights_only=True)
-    self.bace=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/bace.pt',weights_only=True)
-    self.ctox=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/ctox.pt',weights_only=True)
-    self.fda=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/fda.pt',weights_only=True)
-    self.freesolv=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/freesolv.pt',weights_only=True)
-    self.lipophilicity=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/lipophilicity.pt',weights_only=True)
+    self.bbbp=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/bbbp.pt',weights_only=True,map_location=torch.device('cpu'))
+    self.bace=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/bace.pt',weights_only=True,map_location=torch.device('cpu'))
+    self.ctox=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/ctox.pt',weights_only=True,map_location=torch.device('cpu'))
+    self.fda=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/fda.pt',weights_only=True,map_location=torch.device('cpu'))
+    self.freesolv=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/freesolv.pt',weights_only=True,map_location=torch.device('cpu'))
+    self.lipophilicity=torch.load('/content/drive/MyDrive/AI_store/Chemical_App/Source Code/AI_Model/AI_model_cache/Smiles Searching/lipophilicity.pt',weights_only=True,map_location=torch.device('cpu'))
 
 
     #smiles
